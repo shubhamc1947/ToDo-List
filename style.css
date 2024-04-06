@@ -99,6 +99,10 @@ input:focus{
     border:0.1px solid #333;
 }
 
+.form button:focus{
+    outline : none;
+    border:0.1px solid #333;
+}
 
 .list{
     margin-top:1rem;
