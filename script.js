@@ -15,17 +15,28 @@ function storingdata(){
 
     addlist.value=addlist.value.trim();
     if(addlist.value==""){
-        alert("Empty List");
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Input Box is Empty",
+          });
     }else{
         const ele=`<div class="items" ><div class="itemsleft" >
             ${addlist.value}</div><div class="itemsright"><i class="fa-solid fa-trash"></i></li></div></div>`;
             listcont.innerHTML+=ele;
+
+            storedata();
+            Swal.fire({
+                title: "Good job!",
+                text: "Your Data Inserted!",
+                icon: "success"
+            });
     }       
     addlist.value="";
     addlist.focus();
 
     //storing in local data
-    storedata();
+    
 }
 
 
