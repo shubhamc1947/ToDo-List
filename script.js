@@ -33,7 +33,7 @@ function storingdata(){
             });
     }       
     addlist.value="";
-    // addlist.focus();
+    addlist.focus();
 
     //storing in local data
     
