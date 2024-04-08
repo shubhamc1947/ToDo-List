@@ -157,11 +157,24 @@ input:focus{
 
 .itemsright{
     padding: 0.4rem;
-    cursor: pointer;
+    /* cursor: pointer; */
     color:rgb(231, 55, 55);
+    display: flex;
+    gap:1rem;
+}
+.edit ,.del{
+    cursor: pointer;;
 }
 
 .itemsright i{
     pointer-events: none;
 }
 
+
+
+.none{
+    display: none;
+}
+.block{
+    display: block;
+}

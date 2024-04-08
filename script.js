@@ -22,7 +22,8 @@ function storingdata(){
           });
     }else{
         const ele=`<div class="items" ><div class="itemsleft" >
-            ${addlist.value}</div><div class="itemsright"><i class="fa-solid fa-trash"></i></li></div></div>`;
+            ${addlist.value}</div><div class="itemsright">
+            <div class="edit"><i class="fa-regular fa-pen-to-square"></i></div><div class="del"><i class="fa-solid fa-trash"></i></div></div></div>`;
             listcont.innerHTML+=ele;
 
             storedata();
@@ -33,7 +34,7 @@ function storingdata(){
             });
     }       
     addlist.value="";
-    addlist.focus();
+    // addlist.focus();
 
     //storing in local data
     
@@ -62,10 +63,21 @@ listcont.addEventListener("click",function(ele){
 
         ele.target.classList.toggle("checked");
 
-    }else if(ele.target.classList.contains("itemsright")){
+    }else if(ele.target.classList.contains("del")){
 
-        ele.target.parentElement.remove();
+        ele.target.parentElement.parentElement.remove();
         
+    }else if(ele.target.classList.contains("edit")){
+        const id=ele.target.parentElement.parentElement.children[0];
+        const value=prompt("Enter the Edited Thing at the place of "+id.innerText);
+        if(value===null){
+        }
+        else if(value!==""){
+            id.innerText=value;
+
+        }
+
+
     }
     storedata();
 })
